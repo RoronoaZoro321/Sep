@@ -75,27 +75,34 @@ class PasswordGenerator(QMainWindow):
         for key, value in self.saved_passwords.items():
             label_key = QLabel(self)
             label_key.setText(key)
-            label_key.setStyleSheet("font-weight: bold; color: brown; border: 1px solid black;")
+            label_key.setStyleSheet("font-weight: bold; color:  brown;")
 
             label_value = QLabel(self)
             label_value.setText(value)
-            label_value.setStyleSheet("font-weight: bold; color: grey; border: 1px solid black;")
+            label_value.setStyleSheet("font-weight: bold; color:  grey;")
 
-            # create a horizontal layout and add to the vertical layout
-            horizontalLayout = QHBoxLayout()
-            horizontalLayout.addWidget(label_key)
-            horizontalLayout.addWidget(label_value)
-            ui.verticalLayout_2.addLayout(horizontalLayout)
+            box = QGroupBox(self)   
+            box.setStyleSheet("border: 2px solid black; border-radius: 5px;")   
+            box_layout = QHBoxLayout()
+            box.setLayout(box_layout)
+            box_layout.addWidget(label_key)
+            box_layout.addWidget(label_value)
 
-            button = QPushButton(self)
-            button.setText("Copy")
+            # spacer = QSpacerItem(10, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            # box_layout.addItem(spacer)
+
+            # button = QPushButton(self)
+            # button.setText("Copy")
+            # button.setStyleSheet("background-color: blue; color: white; border-radius: 5px;")
+            # add the style to the button when clicked
+            # button.clicked.connect(lambda: button.setStyleSheet("background-color: green; color: white; border-radius: 5px;"))
+            # button.clicked.connect(lambda: QApplication.clipboard().setText(value))
+            # button.setMaximumWidth(50)
+            # button.setMaximumHeight(25)
+            # ui.setAlignment(button, Qt.AlignRight)
+            # ui.verticalLayout_2.addWidget(button)            
             
-            button.clicked.connect(lambda: button.setStyleSheet("background-color: green; color: white; border-radius: 5px; border: 1px solid black; "))
-            button.clicked.connect(lambda: QApplication.clipboard().setText(value))
-            button.clicked.connect(lambda: button.setText("Copied!"))
-            button.setMaximumWidth(50)
-            button.setMaximumHeight(25)
-            ui.verticalLayout_2.addWidget(button)
+            ui.verticalLayout_2.addWidget(box)
             
         dialog.show()
         dialog.exec()
