@@ -1,0 +1,6 @@
+// incase "program3_1.ui" is save in OneDrive/desktop
+// to compile as python file
+pyside6-uic program3_1.ui -o "C:\Users\araya\OneDrive\Desktop\Year 2\Term2\Sep\3\output.py"
+
+// cd to desktop first
+example : C:\Users\araya\OneDrive\Desktop>pyside6-uic program3_2.ui -o "C:\Users\araya\OneDrive\Desktop\Year 2\Term2\Sep\3\program3_2.py"
