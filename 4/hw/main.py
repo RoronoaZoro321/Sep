@@ -31,8 +31,6 @@ class Animal:
         if self.y > arena_height:
             self.random_pos(arena_height)
 
-
-
 class Dog(Animal):
     def __init__(self):
         super().__init__("4/hw/images/dog.png")
@@ -53,11 +51,10 @@ class Animation_area(QWidget):
         self.dog = Dog()
         self.cat.random_pos(self.arena_w)
         self.dog.random_pos(self.arena_w)
-        self.score = 0
 
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_value)
-        self.timer.start(5)  # Adjust the timer interval to control the falling speed
+        self.timer.start(4)  # Adjust the timer interval to control the falling speed
 
     def update_value(self):
         self.cat.update_position(self.arena_h)
@@ -90,7 +87,6 @@ class Simple_drawing_window(QWidget):
         label.setStyleSheet("font-size: 20px; font-weight: bold; color: red;")
         
         layout.addWidget(label)
-        layout.addWidget(score_label)
         layout.addWidget(self.anim_area)
         
         self.setLayout(layout)
