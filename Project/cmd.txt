@@ -1,0 +1,1 @@
+pyside6-uic first.ui -o "C:\Users\araya\Desktop\University\year2\Term2\Sep\Project\gui_1.py"

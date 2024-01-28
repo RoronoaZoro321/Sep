@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>image/home 1.png</file>
+    <file>image/profiles 1.png</file>
+    <file>image/profit 1.png</file>
+    <file>image/setting 1.png</file>
+    <file>image/wallet_855279 2.png</file>
+  </qresource>
+</RCC>
